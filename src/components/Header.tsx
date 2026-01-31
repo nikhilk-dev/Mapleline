@@ -34,8 +34,8 @@ const Header = () => {
       <div className="section-container">
         <div className="flex items-center justify-between">
           <a href={import.meta.env.BASE_URL || "/"} className="flex items-center gap-2">
-            <img src={`${import.meta.env.BASE_URL || "/"}favicon.svg`} alt="MapleLine" className="w-10 h-10 rounded-lg" />
-            <span className="text-xl font-bold text-foreground">MapleLine</span>
+            <img src={`${import.meta.env.BASE_URL || "/"}favicon.svg`} alt="MapleLine" className="w-8 h-8 rounded-lg" />
+            <span className="text-xl font-bold text-foreground lowercase">mapleline</span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-8">
