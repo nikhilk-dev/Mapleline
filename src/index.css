@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* MapleLine Health Design System - Dark Medical-Tech Theme with Orange Accent */
+/* MapleLine Health Design System - Light Medical-Tech Theme with Orange Accent */
 
 @layer base {
   :root {
@@ -64,57 +64,6 @@
     --shadow-glow: 0 0 60px hsl(17 100% 55% / 0.2);
     --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.08);
   }
-
-  .dark {
-    --background: 0 0% 11%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 14%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 17 100% 55%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 60%;
-
-    --accent: 0 0% 18%;
-    --accent-foreground: 0 0% 95%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 22%;
-    --input: 0 0% 22%;
-    --ring: 17 100% 55%;
-
-    --sidebar-background: 0 0% 13%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 17 100% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 22%;
-    --sidebar-ring: 17 100% 55%;
-
-    --chart-1: 17 100% 55%;
-    --chart-2: 17 80% 65%;
-    --chart-3: 17 60% 45%;
-    --chart-4: 0 0% 50%;
-    --chart-5: 0 0% 70%;
-
-    /* Custom gradients - dark mode */
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 11%), hsl(0 0% 9%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 12%));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(17 100% 55% / 0.2), transparent 70%);
-    --shadow-glow: 0 0 60px hsl(17 100% 55% / 0.3);
-  }
 }
 
 @layer base {
@@ -160,10 +109,6 @@
   }
 
   .glass {
-    @apply bg-card/90 backdrop-blur-xl border border-border;
-  }
-
-  .glass-dark {
     @apply bg-card/90 backdrop-blur-xl border border-border;
   }
 }
