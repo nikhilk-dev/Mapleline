@@ -4,7 +4,6 @@ const Footer = () => {
   const links = {
     product: [
       { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
       { label: "How It Works", href: "#solution" },
     ],
     company: [
@@ -18,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border/50 py-12">
+    <footer className="border-t border-border py-12 bg-card">
       <div className="section-container">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -86,7 +85,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border/50 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
             © {currentYear} MapleLine Health. Made with 🍁 in Canada.
           </p>

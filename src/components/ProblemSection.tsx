@@ -22,7 +22,7 @@ const ProblemSection = () => {
       <div className="section-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">The Problem</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6 text-foreground">
             Your Front Desk Is in Crisis,{" "}
             <span className="text-gradient">Even If It Looks 'Fine'</span>
           </h2>
@@ -30,9 +30,9 @@ const ProblemSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {/* Patients Column */}
-          <div className="glass-dark rounded-2xl p-8 border border-destructive/20 hover:border-destructive/40 transition-colors">
+          <div className="bg-card rounded-2xl p-8 border border-destructive/20 hover:border-destructive/40 transition-colors shadow-lg">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-destructive/20 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-xl bg-destructive/10 flex items-center justify-center">
                 <Users className="w-7 h-7 text-destructive" />
               </div>
               <div>
@@ -44,7 +44,7 @@ const ProblemSection = () => {
             <ul className="space-y-4">
               {patientPains.map((pain, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-destructive text-sm font-bold">✕</span>
                   </span>
                   <span className="text-foreground">{pain}</span>
@@ -54,9 +54,9 @@ const ProblemSection = () => {
           </div>
 
           {/* Clinics Column */}
-          <div className="glass-dark rounded-2xl p-8 border border-destructive/20 hover:border-destructive/40 transition-colors">
+          <div className="bg-card rounded-2xl p-8 border border-destructive/20 hover:border-destructive/40 transition-colors shadow-lg">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-destructive/20 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-xl bg-destructive/10 flex items-center justify-center">
                 <Building2 className="w-7 h-7 text-destructive" />
               </div>
               <div>
@@ -68,7 +68,7 @@ const ProblemSection = () => {
             <ul className="space-y-4">
               {clinicPains.map((pain, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-destructive text-sm font-bold">✕</span>
                   </span>
                   <span className="text-foreground">{pain}</span>

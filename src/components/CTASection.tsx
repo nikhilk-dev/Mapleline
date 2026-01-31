@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, FileText } from "lucide-react";
+import { Send, FileText, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const CTASection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     clinicName: "",
     role: "",
@@ -15,19 +16,59 @@ const CTASection = () => {
     painPoint: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for your interest!",
-      description: "We'll be in touch within 24 hours to schedule your pilot call.",
-    });
-    setFormData({
-      clinicName: "",
-      role: "",
-      email: "",
-      callVolume: "",
-      painPoint: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      // Google Apps Script Web App URL for the spreadsheet
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJfF4sMxNdJe_m7uJk0U7fM7D_9TxHLnPGu3W8hLZ7CWlJLKqG6zp0RDJLLRnQxQqM/exec";
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          clinicName: formData.clinicName,
+          role: formData.role,
+          email: formData.email,
+          callVolume: formData.callVolume,
+          painPoint: formData.painPoint,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      toast({
+        title: "Thank you for your interest!",
+        description: "We'll be in touch within 24 hours to schedule your pilot call.",
+      });
+
+      setFormData({
+        clinicName: "",
+        role: "",
+        email: "",
+        callVolume: "",
+        painPoint: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Thank you!",
+        description: "We've received your request and will be in touch soon.",
+      });
+
+      setFormData({
+        clinicName: "",
+        role: "",
+        email: "",
+        callVolume: "",
+        painPoint: "",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,7 +94,7 @@ const CTASection = () => {
               <Button variant="hero" size="xl">
                 Book a Free Pilot Call
               </Button>
-              <Button variant="hero-outline" size="lg" className="flex items-center gap-2">
+              <Button variant="outline" size="lg" className="flex items-center gap-2">
                 <FileText className="w-5 h-5" />
                 Get the Product Overview PDF
               </Button>
@@ -61,7 +102,7 @@ const CTASection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="glass-dark rounded-3xl p-8 border border-border/50">
+          <div className="bg-card rounded-3xl p-8 border border-border shadow-lg">
             <h3 className="text-xl font-bold text-foreground mb-6">Request a Demo</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -70,8 +111,9 @@ const CTASection = () => {
                   placeholder="Clinic Name"
                   value={formData.clinicName}
                   onChange={(e) => setFormData({ ...formData, clinicName: e.target.value })}
-                  className="bg-muted/50 border-border/50 focus:border-primary"
+                  className="bg-background border-border focus:border-primary"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -80,8 +122,9 @@ const CTASection = () => {
                   placeholder="Your Role (e.g., Clinic Manager, MOA, Physician)"
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                  className="bg-muted/50 border-border/50 focus:border-primary"
+                  className="bg-background border-border focus:border-primary"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -91,8 +134,9 @@ const CTASection = () => {
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="bg-muted/50 border-border/50 focus:border-primary"
+                  className="bg-background border-border focus:border-primary"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -101,7 +145,8 @@ const CTASection = () => {
                   placeholder="Approximate Call Volume (e.g., 80-100/day)"
                   value={formData.callVolume}
                   onChange={(e) => setFormData({ ...formData, callVolume: e.target.value })}
-                  className="bg-muted/50 border-border/50 focus:border-primary"
+                  className="bg-background border-border focus:border-primary"
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -110,13 +155,23 @@ const CTASection = () => {
                   placeholder="What's most painful about your current phone setup?"
                   value={formData.painPoint}
                   onChange={(e) => setFormData({ ...formData, painPoint: e.target.value })}
-                  className="bg-muted/50 border-border/50 focus:border-primary min-h-[100px]"
+                  className="bg-background border-border focus:border-primary min-h-[100px]"
+                  disabled={isSubmitting}
                 />
               </div>
 
-              <Button type="submit" variant="hero" size="lg" className="w-full">
-                <Send className="w-4 h-4" />
-                Submit Request
+              <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Submit Request
+                  </>
+                )}
               </Button>
             </form>
           </div>

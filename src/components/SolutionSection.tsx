@@ -50,7 +50,7 @@ const SolutionSection = () => {
       <div className="section-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">The Solution</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6 text-foreground">
             MapleLine Picks Up Every Call.{" "}
             <span className="text-gradient">Day or Night.</span>
           </h2>
@@ -65,7 +65,7 @@ const SolutionSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group glass-dark rounded-2xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-glow"
+              className="group bg-card rounded-2xl p-8 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg shadow-md"
             >
               <div className="flex items-start gap-5">
                 <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -89,7 +89,7 @@ const SolutionSection = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-dark text-foreground font-medium">
+          <p className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card border border-border text-foreground font-medium shadow-sm">
             <span className="text-primary">✓</span>
             No IVR trees, no 'press 1, press 2' – just natural conversation.
           </p>

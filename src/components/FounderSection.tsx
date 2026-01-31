@@ -1,20 +1,26 @@
+import nikhilPhoto from "@/assets/nikhil-kanda.png";
+
 const FounderSection = () => {
   return (
     <section id="about" className="section-padding relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
 
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="glass-dark rounded-3xl p-8 md:p-12 border border-border/50">
+          <div className="bg-card rounded-3xl p-8 md:p-12 border border-border shadow-lg">
             <div className="grid md:grid-cols-3 gap-8 items-center">
               {/* Avatar/Photo Area */}
               <div className="text-center md:text-left">
-                <div className="w-32 h-32 mx-auto md:mx-0 rounded-2xl gradient-primary flex items-center justify-center text-5xl font-bold text-primary-foreground">
-                  NK
+                <div className="w-32 h-32 mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={nikhilPhoto}
+                    alt="Nikhil Kanda - Founder of MapleLine Health"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="mt-4">
                   <h3 className="text-xl font-bold text-foreground">Nikhil Kanda</h3>
-                  <p className="text-primary text-sm">(Nix)</p>
+                  <p className="text-primary text-sm font-medium">(Nix)</p>
                   <p className="text-muted-foreground text-sm mt-1">Founder, MapleLine Health</p>
                 </div>
               </div>
@@ -42,10 +48,10 @@ const FounderSection = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-4">
-                  <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium">
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                     9+ Years in Product Design
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-medium">
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
                     AI Product Experience
                   </span>
                   <span className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium">

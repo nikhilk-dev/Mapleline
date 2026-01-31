@@ -1,4 +1,4 @@
-import { Phone, Calendar, Clock, CheckCircle } from "lucide-react";
+import { Phone, Calendar, Clock, CheckCircle, Activity, Users, Bell, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -20,13 +20,13 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-8 animate-fade-in">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark border border-primary/20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm text-muted-foreground">24/7 AI Phone Coverage</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
               Always-On Phone Access{" "}
               <span className="text-gradient">for Your Clinic</span>
             </h1>
@@ -52,74 +52,140 @@ const HeroSection = () => {
               <Button variant="hero" size="xl">
                 Book a Free 30-Day Pilot
               </Button>
-              <Button variant="hero-outline" size="xl">
+              <Button variant="outline" size="xl">
                 See How It Works
               </Button>
             </div>
 
             {/* Trust Line */}
-            <p className="text-sm text-muted-foreground pt-4 border-t border-border/50 max-w-lg">
+            <p className="text-sm text-muted-foreground pt-4 border-t border-border max-w-lg">
               Designed by <span className="text-foreground font-medium">Nikhil Kanda (Nix)</span> – Canadian founder,
               design leader, and new father who experienced the pain of unreachable clinics first-hand.
             </p>
           </div>
 
-          {/* Hero Visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative animate-float">
-              {/* Phone Mockup */}
-              <div className="relative mx-auto w-72 h-[580px] bg-card rounded-[3rem] border-4 border-border/50 shadow-2xl overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />
-                <div className="p-4 pt-10 space-y-4">
-                  {/* Call UI */}
-                  <div className="text-center py-8">
-                    <div className="w-20 h-20 mx-auto rounded-full gradient-primary flex items-center justify-center mb-4">
-                      <Phone className="w-8 h-8 text-primary-foreground" />
+          {/* Hero Visual - Phone + Laptop */}
+          <div className="relative hidden lg:flex items-end justify-center gap-6">
+            {/* Laptop Mockup */}
+            <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="relative w-80 h-52 bg-card rounded-t-xl border border-border shadow-2xl overflow-hidden">
+                {/* Laptop Screen Content - Dashboard */}
+                <div className="p-4 h-full bg-background">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-xs font-semibold text-foreground">System Health</h4>
+                    <span className="text-[10px] text-muted-foreground">Live</span>
+                  </div>
+
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-2 mb-3">
+                    <div className="bg-card rounded-lg p-2 border border-border">
+                      <div className="flex items-center gap-1 mb-1">
+                        <Phone className="w-3 h-3 text-primary" />
+                        <span className="text-[10px] text-muted-foreground">Calls</span>
+                      </div>
+                      <p className="text-sm font-bold text-foreground">247</p>
+                      <p className="text-[9px] text-primary">+12% today</p>
                     </div>
-                    <p className="text-foreground font-semibold text-lg">MapleLine Health</p>
-                    <p className="text-primary text-sm">Connected • Speaking</p>
+                    <div className="bg-card rounded-lg p-2 border border-border">
+                      <div className="flex items-center gap-1 mb-1">
+                        <Users className="w-3 h-3 text-primary" />
+                        <span className="text-[10px] text-muted-foreground">Booked</span>
+                      </div>
+                      <p className="text-sm font-bold text-foreground">89</p>
+                      <p className="text-[9px] text-primary">36% rate</p>
+                    </div>
+                    <div className="bg-card rounded-lg p-2 border border-border">
+                      <div className="flex items-center gap-1 mb-1">
+                        <Clock className="w-3 h-3 text-primary" />
+                        <span className="text-[10px] text-muted-foreground">Saved</span>
+                      </div>
+                      <p className="text-sm font-bold text-foreground">18h</p>
+                      <p className="text-[9px] text-primary">this week</p>
+                    </div>
+                  </div>
+
+                  {/* Mini Chart */}
+                  <div className="bg-card rounded-lg p-2 border border-border">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] text-muted-foreground">Call Volume</span>
+                      <TrendingUp className="w-3 h-3 text-primary" />
+                    </div>
+                    <div className="flex items-end gap-1 h-8">
+                      {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75, 95, 80].map((h, i) => (
+                        <div
+                          key={i}
+                          className="flex-1 bg-primary/30 rounded-sm"
+                          style={{ height: `${h}%` }}
+                        >
+                          <div
+                            className="w-full bg-primary rounded-sm"
+                            style={{ height: `${Math.min(h + 10, 100)}%` }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Laptop Base */}
+              <div className="w-96 h-3 bg-muted rounded-b-lg mx-auto border-x border-b border-border" />
+              <div className="w-24 h-1 bg-muted-foreground/30 rounded-b-lg mx-auto" />
+            </div>
+
+            {/* Phone Mockup */}
+            <div className="relative animate-float -ml-8 z-10">
+              <div className="relative w-48 h-[380px] bg-card rounded-[2rem] border-4 border-border shadow-2xl overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-background rounded-b-xl" />
+                <div className="p-3 pt-8 space-y-3">
+                  {/* Call UI */}
+                  <div className="text-center py-4">
+                    <div className="w-14 h-14 mx-auto rounded-full gradient-primary flex items-center justify-center mb-2">
+                      <Phone className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <p className="text-foreground font-semibold text-sm">MapleLine</p>
+                    <p className="text-primary text-xs">Connected</p>
                   </div>
 
                   {/* Conversation Preview */}
-                  <div className="space-y-3">
-                    <div className="bg-muted/50 rounded-2xl rounded-tl-sm p-3">
-                      <p className="text-sm text-muted-foreground">
-                        "Hi, I'd like to book an appointment for next week..."
+                  <div className="space-y-2">
+                    <div className="bg-muted rounded-xl rounded-tl-sm p-2">
+                      <p className="text-xs text-muted-foreground">
+                        "I'd like to book for next week..."
                       </p>
                     </div>
-                    <div className="bg-primary/20 rounded-2xl rounded-tr-sm p-3 ml-8">
-                      <p className="text-sm text-foreground">
-                        "I'd be happy to help! I see Dr. Chen has availability on Tuesday at 2pm or Thursday at 10am."
+                    <div className="bg-primary/20 rounded-xl rounded-tr-sm p-2 ml-4">
+                      <p className="text-xs text-foreground">
+                        "Dr. Chen has Tuesday at 2pm or Thursday at 10am."
                       </p>
                     </div>
                   </div>
 
                   {/* Status Cards */}
-                  <div className="grid grid-cols-2 gap-3 pt-4">
-                    <div className="bg-muted/30 rounded-xl p-3 text-center">
-                      <Calendar className="w-5 h-5 text-primary mx-auto mb-1" />
-                      <p className="text-xs text-muted-foreground">Booking</p>
+                  <div className="grid grid-cols-2 gap-2 pt-2">
+                    <div className="bg-muted rounded-lg p-2 text-center">
+                      <Calendar className="w-4 h-4 text-primary mx-auto mb-1" />
+                      <p className="text-[10px] text-muted-foreground">Booking</p>
                     </div>
-                    <div className="bg-muted/30 rounded-xl p-3 text-center">
-                      <Clock className="w-5 h-5 text-secondary mx-auto mb-1" />
-                      <p className="text-xs text-muted-foreground">24/7</p>
+                    <div className="bg-muted rounded-lg p-2 text-center">
+                      <Clock className="w-4 h-4 text-primary mx-auto mb-1" />
+                      <p className="text-[10px] text-muted-foreground">24/7</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 glass-dark rounded-xl p-3 shadow-lg animate-pulse-glow">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                  <span className="text-sm font-medium text-foreground">Call Answered</span>
+              <div className="absolute -top-3 -right-3 bg-card rounded-lg p-2 shadow-lg border border-border animate-pulse-glow">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="text-xs font-medium text-foreground">Call Answered</span>
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -left-4 glass-dark rounded-xl p-3 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-foreground">Appointment Booked</span>
+              <div className="absolute -bottom-3 -left-3 bg-card rounded-lg p-2 shadow-lg border border-border">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle className="w-3 h-3 text-primary" />
+                  <span className="text-xs font-medium text-foreground">Booked</span>
                 </div>
               </div>
             </div>
