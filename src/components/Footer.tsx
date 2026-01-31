@@ -22,11 +22,9 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">M</span>
-              </div>
-              <span className="text-xl font-bold text-foreground">MapleLine</span>
+            <a href={import.meta.env.BASE_URL || "/"} className="flex items-center gap-2 mb-4">
+              <img src={`${import.meta.env.BASE_URL || "/"}favicon.svg`} alt="mapleline" className="w-8 h-8 rounded-lg" />
+              <span className="text-xl font-bold text-foreground lowercase">mapleline</span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
               24/7 AI-powered phone reception for Canadian clinics. Never miss a patient call again.
