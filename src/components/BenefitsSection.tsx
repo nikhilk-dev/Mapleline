@@ -30,12 +30,12 @@ const BenefitsSection = () => {
 
   return (
     <section className="section-padding relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
 
       <div className="section-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Benefits</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6 text-foreground">
             What Clinics <span className="text-gradient">Actually Get</span>
           </h2>
         </div>
@@ -44,7 +44,7 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group text-center glass-dark rounded-2xl p-8 border border-border/50 hover:border-primary/50 transition-all duration-300"
+              className="group text-center bg-card rounded-2xl p-8 border border-border hover:border-primary/50 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <benefit.icon className="w-8 h-8 text-primary-foreground" />

@@ -32,7 +32,7 @@ const ComplianceSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Compliance</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-6 text-foreground">
               Canadian Compliance{" "}
               <span className="text-gradient">from Day One</span>
             </h2>
@@ -40,7 +40,7 @@ const ComplianceSection = () => {
             <ul className="space-y-5 mb-8">
               {compliancePoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <point.icon className="w-5 h-5 text-primary" />
                   </div>
                   <span className="text-foreground pt-2">{point.text}</span>
@@ -55,7 +55,7 @@ const ComplianceSection = () => {
           </div>
 
           <div className="relative">
-            <div className="glass-dark rounded-3xl p-10 border border-primary/20">
+            <div className="bg-card rounded-3xl p-10 border border-primary/20 shadow-lg">
               <div className="flex items-center justify-center mb-8">
                 <div className="w-24 h-24 rounded-2xl gradient-primary flex items-center justify-center shadow-glow">
                   <Shield className="w-12 h-12 text-primary-foreground" />
@@ -68,17 +68,17 @@ const ComplianceSection = () => {
                   Your patients' data is protected with enterprise-grade security and Canadian privacy standards.
                 </p>
 
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border/50">
+                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gradient">🇨🇦</p>
+                    <p className="text-2xl font-bold">🇨🇦</p>
                     <p className="text-xs text-muted-foreground mt-1">Canadian Data</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gradient">🔒</p>
+                    <p className="text-2xl font-bold">🔒</p>
                     <p className="text-xs text-muted-foreground mt-1">Encrypted</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gradient">✓</p>
+                    <p className="text-2xl font-bold text-primary">✓</p>
                     <p className="text-xs text-muted-foreground mt-1">Auditable</p>
                   </div>
                 </div>

@@ -28,14 +28,13 @@ const Header = () => {
     { href: "#problem", label: "The Problem" },
     { href: "#solution", label: "Solution" },
     { href: "#features", label: "Features" },
-    { href: "#pricing", label: "Pricing" },
     { href: "#about", label: "About" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-dark py-3" : "py-5"
+        isScrolled ? "bg-background/95 backdrop-blur-lg border-b border-border py-3" : "py-5"
       }`}
     >
       <div className="section-container">
@@ -86,7 +85,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-border/50 pt-4">
+          <nav className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
