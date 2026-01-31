@@ -93,10 +93,6 @@
     background: var(--gradient-card);
   }
 
-  .gradient-glow {
-    background: var(--gradient-glow);
-  }
-
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
