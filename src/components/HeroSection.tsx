@@ -66,7 +66,7 @@ const HeroSection = () => {
           <div className="relative flex items-center justify-center min-h-[400px]">
             <img
               src={`${import.meta.env.BASE_URL || "/"}hero_image.png`}
-              alt="MapleLine - System Health dashboard and AI call interface"
+              alt="MapleLine - 24/7 AI voice receptionist for Canadian clinics"
               className="max-w-full h-auto animate-fade-in object-contain"
               style={{ maxHeight: "500px" }}
             />
