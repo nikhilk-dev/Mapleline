@@ -36,7 +36,7 @@ const HeroSection = () => {
             {/* Subheadline */}
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
               MapleLine is a 24/7 voice AI receptionist for Canadian clinics that answers every call,
-              books appointments, and escalates urgent cases – without IVR menus, and fully PIPEDA/PHIPA compliant.
+              books appointments, and escalates urgent cases – without IVR menus.
             </p>
 
             {/* Benefits List */}

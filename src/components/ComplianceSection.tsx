@@ -8,7 +8,7 @@ const ComplianceSection = () => {
     },
     {
       icon: FileCheck,
-      text: "PIPEDA/PHIPA aligned handling of personal health information",
+      text: "Proper handling of personal health information",
     },
     {
       icon: Lock,
@@ -63,7 +63,7 @@ const ComplianceSection = () => {
               </div>
 
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold text-foreground">PIPEDA & PHIPA Compliant</h3>
+                <h3 className="text-2xl font-bold text-foreground">Canadian Privacy Standards</h3>
                 <p className="text-muted-foreground">
                   Your patients' data is protected with enterprise-grade security and Canadian privacy standards.
                 </p>
