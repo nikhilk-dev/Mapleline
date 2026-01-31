@@ -90,7 +90,7 @@ const Footer = () => {
             © {currentYear} MapleLine Health. Made with 🍁 in Canada.
           </p>
           <p className="text-muted-foreground text-sm">
-            Built for Canadian clinics. PIPEDA/PHIPA compliant.
+            Built for BC clinics
           </p>
         </div>
       </div>
