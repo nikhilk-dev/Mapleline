@@ -33,8 +33,8 @@ const Header = () => {
     >
       <div className="section-container">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <img src="/favicon.svg" alt="MapleLine" className="w-10 h-10 rounded-lg" />
+          <a href={import.meta.env.BASE_URL || "/"} className="flex items-center gap-2">
+            <img src={`${import.meta.env.BASE_URL || "/"}favicon.svg`} alt="MapleLine" className="w-10 h-10 rounded-lg" />
             <span className="text-xl font-bold text-foreground">MapleLine</span>
           </a>
 
