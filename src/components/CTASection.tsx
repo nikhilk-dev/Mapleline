@@ -19,7 +19,7 @@ const CTASection = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               MapleLine isn't a slide deck—it's a live system we're piloting with clinics like yours.
               If your front desk is overwhelmed or patients struggle to reach you, we'd love to show you
-              what a 24/7 AI receptionist can do.
+              what a 24/7 AI front‑desk assistant can do.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
